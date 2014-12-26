@@ -37,7 +37,6 @@ import org.wltea.analyzer.lucene.IKAnalyzer;
 @Entity
 @Table(catalog="hibernate_search",name="Book")
 @Indexed(index="book")
-//@Analyzer(impl=IKAnalyzer.class)
 @Analyzer(impl=IKAnalyzer.class)
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE,region="org.hibernate.search.hibernate.example.model.Book")  
 @Boost(2.0f)

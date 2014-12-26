@@ -130,6 +130,7 @@
 		<error-code>500</error-code>
 		<location>/WEB-INF/views/error/500.jsp</location>
 	</error-page>
+	
     <session-config>
         <session-timeout>
             30

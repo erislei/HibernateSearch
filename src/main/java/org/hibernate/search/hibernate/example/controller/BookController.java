@@ -29,8 +29,8 @@ public class BookController {
 	
 	@RequestMapping("/search")
 	public ModelAndView search(@RequestParam(value="keyword")String keyword,
-							   @RequestParam(value="start")int start,
-							   @RequestParam(value="pagesize")int pagesize){
+							   @RequestParam(value="start")Integer start,
+							   @RequestParam(value="pagesize")Integer pagesize){
 		QueryResult<Book> queryResult= null;
 		try {
 			keyword=keyword==null?"":keyword.trim();
@@ -47,8 +47,8 @@ public class BookController {
 	
 	
 	@RequestMapping("/query/{start}/{pagesize}")
-	public ModelAndView query(@PathVariable(value="start")int start,
-							  @PathVariable(value="pagesize")int pagesize){
+	public ModelAndView query(@PathVariable(value="start")Integer start,
+							  @PathVariable(value="pagesize")Integer pagesize){
 		QueryResult<Book> queryResult = null;
 		try {
 			List<Book> lists = bookService.query(start, pagesize);
@@ -67,7 +67,7 @@ public class BookController {
 	
 	@RequestMapping("/delete/{id}")
 	@ResponseBody
-	public String delete(@PathVariable(value="id")int id){
+	public String delete(@PathVariable(value="id")Integer id){
 		
 		try {
 			bookService.delete(id);
@@ -150,9 +150,10 @@ public class BookController {
 	
 	@RequestMapping("/load/{id}")
 	@ResponseBody
-	public Book load(@PathVariable(value="id")int id){
+	public Book load(@PathVariable(value="id")Integer id){
 		Book book = bookService.load(id);
 		return book;
 	}
-	
+	public static void main(String[] args) {
+	}
 }

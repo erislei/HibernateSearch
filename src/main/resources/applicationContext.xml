@@ -64,10 +64,10 @@
 
 	<!-- 数据初始化导入 -->
 
-	<jdbc:initialize-database data-source="hibernate4DataSource">
+<!-- 	<jdbc:initialize-database data-source="hibernate4DataSource">
 		<jdbc:script location="classpath:hibernate_search.sql"
 			encoding="GBK" />
-	</jdbc:initialize-database>
+	</jdbc:initialize-database> -->
 
 
 	<bean id="hibernate4sessionFactory"
@@ -76,8 +76,8 @@
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
-				<!-- <prop key="hibernate.show_sql">true</prop> -->
-				<!-- <prop key="hibernate.hbm2ddl.auto">update</prop> -->
+				<prop key="hibernate.show_sql">true</prop> 
+				<prop key="hibernate.hbm2ddl.auto">update</prop> 
 				<prop key="hibernate.jdbc.batch_size">20</prop>
 
 				<!-- hibernate cache -->
@@ -104,14 +104,6 @@
 				<value>org.hibernate.search.hibernate.example.model</value>
 			</list>
 		</property>
-
-		<!-- <property name="annotatedClasses"> <list> <value>org.hibernate.search.hibernate.example.model.Author</value> 
-			<value>org.hibernate.search.hibernate.example.model.Book</value> </list> 
-			</property> -->
-
-		<!-- <property name="mappingResources"> <list> <value>org/hibernate/search/hibernate/example/model/Author.hbm.xml</value> 
-			<value>org/hibernate/search/hibernate/example/model/Book.hbm.xml</value> 
-			</list> </property> -->
 
 	</bean>
 

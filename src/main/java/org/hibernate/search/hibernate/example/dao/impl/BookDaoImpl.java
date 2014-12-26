@@ -93,7 +93,7 @@ public class BookDaoImpl implements BookDao {
 		fullTextQuery.setMaxResults(pagesize);
 		
 		//设置按id排序
-		fullTextQuery.setSort(new Sort(new SortField("id", SortField.INT ,true)));
+		fullTextQuery.setSort(new Sort(new SortField("id", SortField.Type.INT ,true)));
 		
 		//高亮设置
 		SimpleHTMLFormatter formatter=new SimpleHTMLFormatter("<b><font color='red'>", "</font></b>");
