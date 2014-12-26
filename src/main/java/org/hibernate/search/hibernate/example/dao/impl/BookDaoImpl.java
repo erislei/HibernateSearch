@@ -37,6 +37,7 @@ public class BookDaoImpl implements BookDao {
 		return sessionFactory.getCurrentSession();
 	}
 	
+	@Override
 	public void add(Book book) {
 		
 		getSession().persist(book);
@@ -47,21 +48,25 @@ public class BookDaoImpl implements BookDao {
 	public List<Book> query(int start, int pagesize) {
 		return getSession().createCriteria(Book.class).setFirstResult(start).setMaxResults(pagesize).list();
 	}
-
+	
+	@Override
 	public void update(Book book) {
 		getSession().merge(book);
 	}
-
+	
+	@Override
 	public void delete(Book book) {
 		getSession().delete(book);
 	}
-
+	
+	@Override
 	public void delete(int id) {
 		
 		getSession().delete(load(id));
 		
 	}
-
+	
+	@Override
 	public QueryResult<Book> query(String keyword, int start, int pagesize,Analyzer analyzer,String...field) throws Exception{
 		
 		QueryResult<Book> queryResult=new QueryResult<Book>();
@@ -132,7 +137,8 @@ public class BookDaoImpl implements BookDao {
 		
 		return queryResult;
 	}
-
+	
+	@Override
 	public Book load(int id) {
 		return (Book) getSession().get(Book.class, id);
 	}

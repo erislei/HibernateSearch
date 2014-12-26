@@ -7,16 +7,19 @@ import org.hibernate.search.hibernate.example.model.Book;
 import org.hibernate.search.hibernate.example.model.QueryResult;
 
 public interface BookDao {
-	
+
 	void add(Book book);
-	
+
 	Book load(int id);
-	
-	List<Book> query(int start,int pagesize);
+
+	List<Book> query(int start, int pagesize);
+
 	void update(Book book);
+
 	void delete(Book book);
+
 	void delete(int id);
-	
+
 	/**
 	 * 
 	 * @param keyword
@@ -27,6 +30,7 @@ public interface BookDao {
 	 * @return
 	 * @throws Exception
 	 */
-	QueryResult<Book> query(String keyword, int start, int pagesize,Analyzer analyzer,String...field) throws Exception;
-	
+	QueryResult<Book> query(String keyword, int start, int pagesize,
+			Analyzer analyzer, String... field) throws Exception;
+
 }

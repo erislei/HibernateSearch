@@ -17,6 +17,7 @@ public class IndexManger implements InitializingBean {
 	@Qualifier("hibernate4sessionFactory")
 	private SessionFactory sessionFactory;
 
+	@Override
 	public void afterPropertiesSet() throws Exception {
 		// 重建索引
 		FullTextSession fullTextSession = Search
