@@ -2,16 +2,10 @@ package org.hibernate.search.hibernate.example.model;
 
 import java.util.List;
 
-/**
- * 查询结果集封装
- * @author Administrator
- *
- * @param <T>
- */
 public class QueryResult<T> {
-	
+
 	private int searchresultsize;
-	
+
 	List<T> searchresult;
 
 	public int getSearchresultsize() {
@@ -30,5 +24,4 @@ public class QueryResult<T> {
 		this.searchresult = searchresult;
 	}
 
-	
 }

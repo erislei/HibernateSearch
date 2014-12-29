@@ -75,11 +75,6 @@ public class BookDaoImpl implements BookDao {
 		
 		FullTextSession fullTextSession = Search.getFullTextSession(getSession());
 		
-		//使用Hibernate Search api查询 从多个字段匹配 name、description、authors.name
-		//QueryBuilder qb = fullTextSession.getSearchFactory().buildQueryBuilder().forEntity(Book.class ).get();
-		//Query luceneQuery = qb.keyword().onFields(field).matching(keyword).createQuery();
-
-		//使用lucene api查询 从多个字段匹配 name、description、authors.name
 		
 		MultiFieldQueryParser queryParser=new MultiFieldQueryParser(Version.LUCENE_36,new String[]{"name","description","authors.name"}, analyzer);
 		Query luceneQuery=queryParser.parse(keyword);
@@ -124,6 +119,7 @@ public class BookDaoImpl implements BookDao {
 					book.setDescription(highlighterString);
 				}
 			} catch (Exception e) {
+				e.printStackTrace();
 			}
 			
 			books.add(book);

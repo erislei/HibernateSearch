@@ -64,9 +64,9 @@
 
 	<!-- 数据初始化导入 -->
 
-<!-- 	<jdbc:initialize-database data-source="hibernate4DataSource">
+<!--    	<jdbc:initialize-database data-source="hibernate4DataSource">
 		<jdbc:script location="classpath:hibernate_search.sql"
-			encoding="GBK" />
+			encoding="UTF-8" />
 	</jdbc:initialize-database> -->
 
 
@@ -78,7 +78,8 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
 				<prop key="hibernate.show_sql">true</prop> 
 				<prop key="hibernate.hbm2ddl.auto">update</prop> 
-				<prop key="hibernate.jdbc.batch_size">20</prop>
+				<prop key="hibernate.jdbc.fetch_size">50</prop>
+				<prop key="hibernate.jdbc.batch_size">50</prop>
 
 				<!-- hibernate cache -->
 				<prop key="hibernate.cache.use_query_cache">true</prop>

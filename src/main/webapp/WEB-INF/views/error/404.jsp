@@ -16,9 +16,7 @@
 
 <body>
 	<center>
-	  <h1>404公益页面</h1>
-	  <iframe scrolling='no' frameborder='0' src='http://yibo.iyiyun.com/Home/js/yibo404' width='680' height='480' style="display:block;"></iframe>
-	  <p><a href="<c:url value="/"/>">返回首页</a></p>
+	  <h1>404</h1>
 	</center>
 </body>
 </html>

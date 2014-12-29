@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.wltea.analyzer.lucene.IKAnalyzer;
 
 @Controller
+@RequestMapping("/")
 public class BookController {
 	
 	@Resource(name="bookServiceImpl")

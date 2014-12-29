@@ -19,10 +19,9 @@ public class IndexManger implements InitializingBean {
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		// 重建索引
+		//重建索引
 //		FullTextSession fullTextSession = Search
 //				.getFullTextSession(sessionFactory.openSession());
-//
 //		fullTextSession.createIndexer().startAndWait();
 	}
 }
